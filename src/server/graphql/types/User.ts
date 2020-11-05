@@ -1,6 +1,5 @@
 import {
   GraphQLNonNull,
-  GraphQLInt,
   GraphQLObjectType,
   GraphQLString,
 } from "graphql";
@@ -8,10 +7,16 @@ import {
 const User = new GraphQLObjectType({
   name: "user",
   fields: () => ({
-    id: {
-      type: new GraphQLNonNull(GraphQLInt),
+    _id: {
+      type: new GraphQLNonNull(GraphQLString),
     },
     name: {
+      type: new GraphQLNonNull(GraphQLString),
+    },
+    email: {
+      type: new GraphQLNonNull(GraphQLString),
+    },
+    password: {
       type: new GraphQLNonNull(GraphQLString),
     },
   }),
